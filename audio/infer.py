@@ -9,7 +9,7 @@ model = WhisperModel("tiny", device="cpu")
 
 # 音訊資料夾路徑
 audio_dir = "/audio"
-output_dir = "/audio/output"
+#output_dir = "/audio/output"
 os.makedirs(output_dir, exist_ok=True)
 
 # 支援的音訊副檔名
