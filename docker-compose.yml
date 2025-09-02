@@ -1,0 +1,16 @@
+
+
+
+#version: '3'
+services:
+  faster-whisper:
+    image: faster-whisper-demo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./audio:/audio
+      - ./output:/audio/output  
+    environment:
+      - FASTER_WHISPER_CACHE_DIR=/models
+    command: python3 /audio/infer.py
