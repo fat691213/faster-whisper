@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /audio
 
 # 複製推論腳本（請確保 infer.py 存在）
-COPY infer.py .
+#COPY infer.py .
 
 # 安裝 Python 套件
 RUN pip install --no-cache-dir \
@@ -21,5 +21,5 @@ RUN pip install --no-cache-dir \
     moviepy ffmpeg-python
 
 # 預設執行指令
-CMD ["python3", "infer.py"]
+#CMD ["python3", "infer.py"]
 
