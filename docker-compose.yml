@@ -11,6 +11,7 @@ services:
     volumes:
       - ./audio:/audio
       - ./output:/audio/output  
+      - ./video:/video  
     environment:
       - FASTER_WHISPER_CACHE_DIR=/models
     command: python3 /audio/infer.py
