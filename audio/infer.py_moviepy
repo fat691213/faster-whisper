@@ -18,7 +18,7 @@ model = WhisperModel("small", device="cpu", compute_type="int8")
 
 # 批次處理影片
 for filename in os.listdir(video_folder):
-    if filename.lower().endswith(('.mp4', '.mov', '.avi', '.mkv')):
+    if filename.lower().endswith(('.mp4', '.mov', '.avi', '.mkv', '.wmv')):
         video_path = os.path.join(video_folder, filename)
         audio_filename = os.path.splitext(filename)[0] + ".wav"
         audio_path = os.path.join(audio_folder, audio_filename)

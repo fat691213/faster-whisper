@@ -4,7 +4,7 @@
 #version: '3'
 services:
   faster-whisper:
-    image: faster-whisper-demo
+    image: faster-whisper-demo--ffmpeg
     build:
       context: .
       dockerfile: Dockerfile
