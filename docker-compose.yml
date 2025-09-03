@@ -14,4 +14,4 @@ services:
       - ./video:/video  
     environment:
       - FASTER_WHISPER_CACHE_DIR=/models
-    command: python3 /audio/infer.py
+    command: python3 /audio/infer.py_moviepy
