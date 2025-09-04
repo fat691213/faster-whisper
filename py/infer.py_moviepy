@@ -16,8 +16,26 @@ os.makedirs(transcript_folder, exist_ok=True)
 # 初始化語音辨識模型
 model = WhisperModel("small", device="cpu", compute_type="int8")
 
+newfilename =  os.listdir(video_folder)
+with open("/list.txt", "r", encoding="utf-8") as f:
+  oldfilename = [line.strip() for line in f.readlines()]
+checkfilename = list(set(newfilename) - set(oldfilename))
+
+print(f"checklist print list:{checkfilename}")
+print(f"newfilename:{list(newfilename)}& oldfilename:{list(oldfilename)}")
+
 # 批次處理影片
-for filename in os.listdir(video_folder):
+#for filename in os.listdir(video_folder):
+for filename in checkfilename:
+    
+  with open("/list.txt", "a", encoding="utf-8") as f:
+    #for filename in filenames:
+    if filename == '@eaDir':
+        print(f"[##] no處理影片：{filename}")
+        continue
+    else:
+    	f.write(filename + "\n")
+
     if filename.lower().endswith(('.mp4', '.mov', '.avi', '.mkv', '.wmv')):
         video_path = os.path.join(video_folder, filename)
         audio_filename = os.path.splitext(filename)[0] + ".wav"

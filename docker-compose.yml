@@ -12,6 +12,7 @@ services:
       - ./source/audio:/audio
       - ./source/output:/output  
       - ./source/video:/video  
+      - ./source/list.txt:/list.txt  
       - ./py:/py  
     environment:
       - FASTER_WHISPER_CACHE_DIR=/models
